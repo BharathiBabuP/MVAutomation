@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.mintvelvet.listeners.TestListener"/>
+    </listeners>
+    <test parallel="methods" thread-count="1" name="CoreMintValvet">
+        <classes>
+            <class name="com.mintvelvet.test.SearchTest"/>
+            <class name="com.mintvelvet.test.CheckOutTest"/>
+            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.csvExampleTest"/>
+            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.excelExampleTest"/>
+            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.jsonExampleTest"/>
+            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.yamlExampleTest"/>
+
+        </classes>
+    </test>
+</suite>
