@@ -36,6 +36,7 @@ public class CheckOutTest extends  BaseTest {
                         .setGuestFirstName(new Faker().name().firstName())
                         .clicktxtGuestLastName()
                         .setGuestLastName(new Faker().name().lastName())
+                        .waitForWrapperAndClick()
                         .clictxtGuestEmail()
                         .setGuestEmail(new Faker().internet().emailAddress())
                         .clickCheckoutJourneyGuestlogin()

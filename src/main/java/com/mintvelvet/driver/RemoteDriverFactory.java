@@ -30,6 +30,9 @@ public class RemoteDriverFactory {
         } else if (browserName.equalsIgnoreCase(BrowserType.EDGE.toString()))
         {
             desiredCapabilities.setBrowserName(BrowserType.EDGE.toString().toLowerCase());
+        }else if (browserName.equalsIgnoreCase(BrowserType.SAFARI.toString()))
+        {
+            desiredCapabilities.setBrowserName(BrowserType.SAFARI.toString().toLowerCase());
         }
        return new RemoteWebDriver(new URL(ConfigFactory.getConfig().remoteurl()),desiredCapabilities);
 

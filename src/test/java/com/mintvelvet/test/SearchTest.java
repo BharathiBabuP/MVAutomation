@@ -14,7 +14,7 @@ public class SearchTest extends BaseTest {
 
 
     @FrameworkAnnotation(Author = "BiBi",Tag = "smoke")
-    @Test(dataProvider = "getData2",dataProviderClass = DataProviderUtils.class ,description = "To check whether the search returns the correct results")
+    @Test(dataProvider = "getData2",dataProviderClass = DataProviderUtils.class ,description = "To check whether the search of unique product returns the correct results")
 
     public void searchProductTest(TestData testData) throws InterruptedException {
 

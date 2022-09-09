@@ -16,11 +16,22 @@ import java.time.Duration;
 public class SeleniumUtils {
 
 
+    public static Boolean isDisplayed(By by) {
+
+        WebElement element = null;
+
+        element = waitUntilElementPresent(by);
+        return element.isDisplayed();
+    }
+
+
 
     public static void click(By by,String elementName )
     {
         WebElement element =waitUntilElementPresent(by);
         element.click();
+
+
        // ExtentLogger.info(elementName + " is clicked successfully ");
         FrameworkLogger.log(LogType.INFO,elementName + " is clicked successfully ");
 
@@ -67,6 +78,27 @@ public class SeleniumUtils {
         FrameworkLogger.log(LogType.INFO,elementName + " is waited for and clicked successfully ");
     }
 
+
+    public static Boolean isDisplayed(By by, WaitType waitType, String elementName)
+    {
+        WebElement element = null;
+
+        if(waitType == WaitType.PRESENCE)
+        {
+            element = waitUntilElementPresent(by);
+        }else if(waitType == WaitType.CLICKABLE)
+        {
+            element = waitUntilElementClickable(by);
+
+        }else if(waitType == WaitType.VISIBLE)
+        {
+            element = waitUntilElementVisible(by);
+        }
+        
+        FrameworkLogger.log(LogType.INFO,elementName + " is waited for and displayed successfully ");
+        return element.isDisplayed();
+    }
+
     public static void sendKeys(By by, String value , String elementName)
     {
         WebElement element =waitUntilElementPresent(by);
@@ -79,7 +111,6 @@ public class SeleniumUtils {
     {
         WebElement element =waitUntilElementPresent(by);
         String text =element.getText();
-      //  ExtentLogger.info("Text of the element is displayed as '"+ text +"'" ) ;
         FrameworkLogger.log(LogType.INFO,"Text of the element is displayed as '"+ text +"'");
         return text ;
 
@@ -88,20 +119,20 @@ public class SeleniumUtils {
 
 
 
-    private static WebElement waitUntilElementPresent(By by)
+    public static WebElement waitUntilElementPresent(By by)
     {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigFactory.getConfig().timeout()));
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
-    private static WebElement waitUntilElementClickable(By by)
+    public static WebElement waitUntilElementClickable(By by)
     {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigFactory.getConfig().timeout()));
         return wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
 
-    private static WebElement waitUntilElementVisible(By by)
+    public static WebElement waitUntilElementVisible(By by)
     {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigFactory.getConfig().timeout()));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));

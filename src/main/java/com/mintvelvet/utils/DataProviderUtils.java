@@ -33,6 +33,17 @@ public class DataProviderUtils {
     }
 
     @DataSupplier(runInParallel = false)
+    public StreamEx<RedirectionalSearchDataEntity> getRedirectionalSearchTestData(Method method){
+
+
+        return TestDataReader.use(XlsxReader.class)
+                .withTarget(RedirectionalSearchDataEntity.class)
+                .withSource("testdata.xlsx")
+                .read()
+                .filter(testdata->testdata.testCaseName.equalsIgnoreCase(method.getName()));
+    }
+
+    @DataSupplier(runInParallel = false)
     public StreamEx<CsvUserEntity> getCSVUsers(){
 
         return TestDataReader.use(CsvReader.class)

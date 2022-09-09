@@ -6,12 +6,20 @@
     </listeners>
     <test parallel="methods" thread-count="1" name="CoreMintValvet">
         <classes>
-            <class name="com.mintvelvet.test.SearchTest"/>
-            <class name="com.mintvelvet.test.CheckOutTest"/>
-            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.csvExampleTest"/>
-            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.excelExampleTest"/>
-            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.jsonExampleTest"/>
-            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.yamlExampleTest"/>
+
+            <class name="com.mintvelvet.test.home.TC_001_MV_HOME_VERIFY_HEADER_TEST"/>
+            <class name="com.mintvelvet.test.home.TC_002_MV_HOME_VERIFY_HEADER_SEARCHICON_CLICK_TEST"/>
+            <class name="com.mintvelvet.test.home.TC_003_MV_HOME_VERIFY_HEADER_MYACCOUNTICON_CLICK_TEST"/>
+            <class name="com.mintvelvet.test.home.TC_004_MV_HOME_VERIFY_HEADER_WISHLIST_CLICK_TEST"/>
+            <class name="com.mintvelvet.test.home.TC_005_MV_HOME_VERIFY_HEADER_CART_CLICK_TEST"/>
+
+<!--            <class name="com.mintvelvet.test.SearchTest"/>-->
+<!--            <class name="com.mintvelvet.test.SearchRedirectionTest"/>-->
+<!--             <class name="com.mintvelvet.test.CheckOutTest"/>-->
+<!--            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.csvExampleTest"/>-->
+<!--            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.excelExampleTest"/>-->
+<!--            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.jsonExampleTest"/>-->
+<!--            <class name="com.mintvelvet.test.DummyDataProviderTestCollections.yamlExampleTest"/>-->
 
         </classes>
     </test>

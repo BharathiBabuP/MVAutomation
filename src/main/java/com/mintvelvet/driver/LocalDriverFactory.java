@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
 
 public  final class LocalDriverFactory {
 
@@ -35,7 +36,11 @@ public  final class LocalDriverFactory {
         } else if (browserName.equalsIgnoreCase(BrowserType.EDGE.toString())) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
+        }else if (browserName.equalsIgnoreCase(BrowserType.SAFARI.toString())) {
+            WebDriverManager.safaridriver().setup();
+            driver = new SafariDriver();
         }
+
         return driver;
     }
 }

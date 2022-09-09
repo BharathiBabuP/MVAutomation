@@ -12,7 +12,6 @@ public class CheckOutPage {
     public GuestJourneyPage clickCheckOut(){
         //DriverManager.getDriver().findElement(TXT_SEARCH_BOX).click();
         SeleniumUtils.click(BTN_CHECKOUT," checkout  button");
-
         return new GuestJourneyPage();
     }
 }

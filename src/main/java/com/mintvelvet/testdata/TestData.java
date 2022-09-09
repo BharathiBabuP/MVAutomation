@@ -5,7 +5,7 @@ import io.github.sskorol.converters.IntegerConverter;
 import io.github.sskorol.data.Column;
 import io.github.sskorol.data.Sheet;
 
-@Sheet(name = "Regression")
+@Sheet(name = "CheckOutTest")
 public class TestData {
 
     @Column(name="testcasename")
